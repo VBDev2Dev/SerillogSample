@@ -13,6 +13,7 @@ Namespace My
 				Serilog.Log.Logger = New LoggerConfiguration().
 					 MinimumLevel.Debug().
 					 Enrich.FromLogContext.
+					 Enrich.WithCaller().
 					 CreateLogger()
 				Serilog.Log.Logger.Information("App start.")
 

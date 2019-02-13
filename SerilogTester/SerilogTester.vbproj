@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="CallerEnricher.vb" />
     <Compile Include="frmTest.vb">
       <SubType>Form</SubType>
     </Compile>

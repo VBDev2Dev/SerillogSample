@@ -14,6 +14,8 @@ Namespace My
 					 MinimumLevel.Debug().
 					 Enrich.FromLogContext.
 					 Enrich.WithCaller().
+					 WriteTo.RollingFile(IO.Path.Combine(My.Application.Info.DirectoryPath, "log-{Date}.txt"),
+												outputTemplate:="{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] ({Caller}) {Message}{NewLine}{Exception}").
 					 CreateLogger()
 				Serilog.Log.Logger.Information("App start.")
 

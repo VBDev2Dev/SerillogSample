@@ -21,7 +21,7 @@ Class CallerEnricher
 				Dim method = stack.GetMethod()
 
 				If method.DeclaringType.Assembly <> GetType(Log).Assembly Then
-					 Dim caller = $"{method.DeclaringType.FullName}.{method.Name}({String.Join(", ", method.GetParameters().[Select](Function(pi) pi.ParameterType.FullName))}) Line: {stack.GetFileLineNumber}"
+					 Dim caller = $"{method.DeclaringType.FullName}.{method.Name}({String.Join(", ", method.GetParameters().[Select](Function(pi) pi.ParameterType.FullName))}) File:{stack.GetFileName} Line: {stack.GetFileLineNumber}"
 					 logEvent.AddPropertyIfAbsent(New LogEventProperty("Caller", New ScalarValue(caller)))
 				End If
 
